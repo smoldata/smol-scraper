@@ -1,0 +1,36 @@
+{
+	"manifest_version": 2,
+	"applications": {
+		"gecko": {
+			"id": "scraper@smoldata.org"
+		}
+	},
+	"name": "Smol Scraper",
+	"version": "0.0.1",
+	"description": "A simple page data scraper.",
+	"icons": {
+		"48": "icons/scraper-48.png",
+		"96": "icons/scraper-96.png"
+	},
+	"permissions": [
+		"storage",
+		"tabs",
+		"activeTab"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"*://*/*"
+			],
+			"js": [
+				"scraper.js",
+				"facebook/friends.js"
+			]
+		}
+	],
+	"browser_action": {
+		"default_icon": "icons/scraper-32.png",
+		"default_title": "Smol Scraper",
+		"default_popup": "popup/popup.html"
+	}
+}
